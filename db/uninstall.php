@@ -19,7 +19,7 @@
  * @see uninstall_plugin()
  *
  * @package    mod_live
- * @copyright  2011 Your Name <your@email.adress>
+ * @copyright  2013 Sameera Nilupul <sameernilupul@gmail.com>
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 

@@ -26,7 +26,7 @@
  * here will all be database-neutral, using the functions defined in DLL libraries.
  *
  * @package    mod_live
- * @copyright  2011 Your Name
+ * @copyright  2013 Sameera Nilupul
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 

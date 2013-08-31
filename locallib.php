@@ -16,13 +16,8 @@
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
- * Internal library of functions for module live
- *
- * All the live specific functions, needed to implement the module
- * logic, should go here. Never include this file from your lib.php!
- *
  * @package    mod_live
- * @copyright  2011 Your Name
+ * @copyright  2013 Sameera Nilupul
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 

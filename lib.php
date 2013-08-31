@@ -25,13 +25,12 @@
  * Moodle is performing actions across all modules.
  *
  * @package    mod_live
- * @copyright  2011 Your Name
+ * @copyright  2013 Sameera Nilupul
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
 defined('MOODLE_INTERNAL') || die();
 
-/** example constant */
 //define('live_ULTIMATE_ANSWER', 42);
 
 ////////////////////////////////////////////////////////////////////////////////

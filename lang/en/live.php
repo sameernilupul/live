@@ -29,12 +29,14 @@
 
 defined('MOODLE_INTERNAL') || die();
 
-$string['modulename'] = 'live';
-$string['modulenameplural'] = 'lives';
-$string['modulename_help'] = 'Use the live module for... | The live module allows...';
+$string['modulename'] = 'Moodle Live';
+$string['modulenameplural'] = 'Lives';
+$string['modulename_help'] = 'Use the Moodle Live module for interactive video lecturing.  | The live module allows teachers to have interactive video lectures with students using Google Hangouts';
 $string['livefieldset'] = 'Custom example fieldset';
 $string['livename'] = 'live name';
 $string['livename_help'] = 'This is the content of the help tooltip associated with the livename field. Markdown syntax is supported.';
 $string['live'] = 'live';
 $string['pluginadministration'] = 'live administration';
 $string['pluginname'] = 'live';
+$string['enterheader'] ='Name your discussion';
+$string['linktomyapp'] ='<p><a href="https://plus.google.com/hangouts/_?gid=466640560640" style="text-decoration: none;"> <img src="https://ssl.gstatic.com/s2/oz/images/stars/hangout/1/gplus-hangout-15x79-normal.png" alt="Start a Hangout" style="border: 0; width: 79px; height: 15px;" /> </a></p>';

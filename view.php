@@ -16,32 +16,26 @@
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
- * Prints a particular instance of live
- *
- * You can have a rather longer description of the file as well,
- * if you like, and it can span multiple lines.
- *
  * @package    mod_live
- * @copyright  2011 Your Name
+ * @copyright  2013 Sameera Nilupul
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
-/// (Replace live with the name of your module and remove this line)
 
-require_once(dirname(dirname(dirname(__FILE__))).'/config.php');
-require_once(dirname(__FILE__).'/lib.php');
+require_once(dirname(dirname(dirname(__FILE__))) . '/config.php');
+require_once(dirname(__FILE__) . '/lib.php');
 
 $id = optional_param('id', 0, PARAM_INT); // course_module ID, or
-$n  = optional_param('n', 0, PARAM_INT);  // live instance ID - it should be named as the first character of the module
+$n = optional_param('n', 0, PARAM_INT);  // live instance ID - it should be named as the first character of the module
 
 if ($id) {
-    $cm         = get_coursemodule_from_id('live', $id, 0, false, MUST_EXIST);
-    $course     = $DB->get_record('course', array('id' => $cm->course), '*', MUST_EXIST);
-    $live  = $DB->get_record('live', array('id' => $cm->instance), '*', MUST_EXIST);
+    $cm = get_coursemodule_from_id('live', $id, 0, false, MUST_EXIST);
+    $course = $DB->get_record('course', array('id' => $cm->course), '*', MUST_EXIST);
+    $live = $DB->get_record('live', array('id' => $cm->instance), '*', MUST_EXIST);
 } elseif ($n) {
-    $live  = $DB->get_record('live', array('id' => $n), '*', MUST_EXIST);
-    $course     = $DB->get_record('course', array('id' => $live->course), '*', MUST_EXIST);
-    $cm         = get_coursemodule_from_instance('live', $live->id, $course->id, false, MUST_EXIST);
+    $live = $DB->get_record('live', array('id' => $n), '*', MUST_EXIST);
+    $course = $DB->get_record('course', array('id' => $live->course), '*', MUST_EXIST);
+    $cm = get_coursemodule_from_instance('live', $live->id, $course->id, false, MUST_EXIST);
 } else {
     error('You must specify a course_module ID or an instance ID');
 }
@@ -58,20 +52,14 @@ $PAGE->set_title(format_string($live->name));
 $PAGE->set_heading(format_string($course->fullname));
 $PAGE->set_context($context);
 
-// other things you may want to set - remove if not needed
-//$PAGE->set_cacheable(false);
-//$PAGE->set_focuscontrol('some-html-id');
-//$PAGE->add_body_class('live-'.$somevar);
-
 // Output starts here
 echo $OUTPUT->header();
 
-if ($live->intro) { // Conditions to show the intro can change to look for own settings or whatever
+if ($live->intro) { // Conditions to show the intro can change to look for own settings
     echo $OUTPUT->box(format_module_intro('live', $live, $cm->id), 'generalbox mod_introbox', 'liveintro');
 }
+echo $OUTPUT->box(get_string('linktomyapp', 'live'), 'generalbox mod_introbox', 'liveintro');
 
-// Replace the following lines with you own code
-echo $OUTPUT->heading('Yay! It works!');
 
 // Finish the page
 echo $OUTPUT->footer();

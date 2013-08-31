@@ -16,13 +16,8 @@
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
- * The main live configuration form
- *
- * It uses the standard core Moodle formslib. For more info about them, please
- * visit: http://docs.moodle.org/en/Development:lib/formslib.php
- *
  * @package    mod_live
- * @copyright  2011 Your Name
+ * @copyright  2013 Sameera Nilupul
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
@@ -47,7 +42,7 @@ class mod_live_mod_form extends moodleform_mod {
         $mform->addElement('header', 'general', get_string('general', 'form'));
 
         // Adding the standard "name" field
-        $mform->addElement('text', 'name', get_string('livename', 'live'), array('size'=>'64'));
+        $mform->addElement('text', 'name', get_string('enterheader', 'live'), array('size'=>'64'));
         if (!empty($CFG->formatstringstriptags)) {
             $mform->setType('name', PARAM_TEXT);
         } else {
@@ -63,10 +58,10 @@ class mod_live_mod_form extends moodleform_mod {
         //-------------------------------------------------------------------------------
         // Adding the rest of live settings, spreeading all them into this fieldset
         // or adding more fieldsets ('header' elements) if needed for better logic
-        $mform->addElement('static', 'label1', 'livesetting1', 'Your live fields go here. Replace me!');
+        //$mform->addElement('static', 'label1', 'livesetting1', 'Your live fields go here. Replace me!');
 
-        $mform->addElement('header', 'livefieldset', get_string('livefieldset', 'live'));
-        $mform->addElement('static', 'label2', 'livesetting2', 'Your live fields go here. Replace me!');
+        //$mform->addElement('header', 'livefieldset', get_string('livefieldset', 'live'));
+        //$mform->addElement('static', 'label2', 'livesetting2', 'Your live fields go here. Replace me!');
 
         //-------------------------------------------------------------------------------
         // add standard elements, common to all modules
