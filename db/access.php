@@ -60,19 +60,19 @@ $capabilities = array(
 					'manager' => CAP_ALLOW
 			),
 			'clonepermissionsfrom' => 'moodle/course:manageactivities'
-	),
+	),*/
 
-    'mod/live:view' => array(
+    'mod/live:write' => array(
         'captype' => 'read',
         'contextlevel' => CONTEXT_MODULE,
         'legacy' => array(
-            'guest' => CAP_ALLOW,
-            'student' => CAP_ALLOW,
+            'guest' => CAP_PREVENT,
+            'student' => CAP_PREVENT,
             'teacher' => CAP_ALLOW,
             'editingteacher' => CAP_ALLOW,
             'admin' => CAP_ALLOW
         )
-    ),
+    )/*,
 
     'mod/live:submit' => array(
         'riskbitmask' => RISK_SPAM,

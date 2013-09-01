@@ -58,8 +58,14 @@ echo $OUTPUT->header();
 if ($live->intro) { // Conditions to show the intro can change to look for own settings
     echo $OUTPUT->box(format_module_intro('live', $live, $cm->id), 'generalbox mod_introbox', 'liveintro');
 }
-echo $OUTPUT->box(get_string('linktomyapp', 'live'), 'generalbox mod_introbox', 'liveintro');
 
+if (has_capability('mod/live:write', $context)) {
+    echo 'Has capability';
+    echo $OUTPUT->box(get_string('linktomyapp', 'live'), 'generalbox mod_introbox', 'liveintro');
+}else{
+    echo 'Dont have capability to start a lecture you can only view the hangout go to following link';
+    echo '<br> http://www.youtube.com/user/sameeranilupul/live';
+}
 
 // Finish the page
 echo $OUTPUT->footer();
