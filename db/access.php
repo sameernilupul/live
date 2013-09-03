@@ -48,9 +48,8 @@
 defined('MOODLE_INTERNAL') || die();
 
 $capabilities = array(
-/***************************** remove these comment marks and modify the code as needed
 
-	'mod/live:addinstance' => array(
+	/*'mod/live:addinstance' => array(
 			'riskbitmask' => RISK_XSS,
 	
 			'captype' => 'write',
@@ -82,6 +81,6 @@ $capabilities = array(
             'student' => CAP_ALLOW
         )
     ),
-******************************/
+    */
 );
 

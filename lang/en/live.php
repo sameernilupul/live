@@ -39,5 +39,6 @@ $string['live'] = 'live';
 $string['pluginadministration'] = 'live administration';
 $string['pluginname'] = 'live';
 $string['enterheader'] ='Name your discussion';
+$string['enteryoutube'] ='Your YouTube username';
 $string['linktomyapp'] ='<p><a href="https://plus.google.com/hangouts/_?gid=466640560640" style="text-decoration:none;"><img src="https://ssl.gstatic.com/s2/oz/images/stars/hangout/1/gplus-hangout-24x100-normal.png" alt="Start a Hangout" style="border:0;width:100px;height:24px;"/></a></p>';
 

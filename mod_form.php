@@ -20,10 +20,9 @@
  * @copyright  2013 Sameera Nilupul
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
-
 defined('MOODLE_INTERNAL') || die();
 
-require_once($CFG->dirroot.'/course/moodleform_mod.php');
+require_once($CFG->dirroot . '/course/moodleform_mod.php');
 
 /**
  * Module instance settings form
@@ -42,7 +41,7 @@ class mod_live_mod_form extends moodleform_mod {
         $mform->addElement('header', 'general', get_string('general', 'form'));
 
         // Adding the standard "name" field
-        $mform->addElement('text', 'name', get_string('enterheader', 'live'), array('size'=>'64'));
+        $mform->addElement('text', 'name', get_string('enterheader', 'live'), array('size' => '64'));
         if (!empty($CFG->formatstringstriptags)) {
             $mform->setType('name', PARAM_TEXT);
         } else {
@@ -58,11 +57,16 @@ class mod_live_mod_form extends moodleform_mod {
         //-------------------------------------------------------------------------------
         // Adding the rest of live settings, spreeading all them into this fieldset
         // or adding more fieldsets ('header' elements) if needed for better logic
-        //$mform->addElement('static', 'label1', 'livesetting1', 'Your live fields go here. Replace me!');
-
+        $mform->addElement('static', 'type', 'Broadcasting', 'Do you want to brodcast your lecture?');
+        
+        $radioarray = array();
+        $radioarray[] = & $mform->createElement('radio', 'yesno', '', get_string('yes'), 1, $attributes);
+        $radioarray[] = & $mform->createElement('radio', 'yesno', '', get_string('no'), 0, $attributes);
+        $mform->addGroup($radioarray, 'radioar', '', array(' '), false);
+        
+        $mform->addElement('text', 'youtubeusername', get_string('enteryoutube', 'live'), array('size' => '64'));
         //$mform->addElement('header', 'livefieldset', get_string('livefieldset', 'live'));
         //$mform->addElement('static', 'label2', 'livesetting2', 'Your live fields go here. Replace me!');
-
         //-------------------------------------------------------------------------------
         // add standard elements, common to all modules
         $this->standard_coursemodule_elements();
@@ -70,4 +74,5 @@ class mod_live_mod_form extends moodleform_mod {
         // add standard buttons, common to all modules
         $this->add_action_buttons();
     }
+
 }
