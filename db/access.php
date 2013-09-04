@@ -44,23 +44,20 @@
  * @copyright  2013 Sameera Nilupul
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
-
 defined('MOODLE_INTERNAL') || die();
 
 $capabilities = array(
-
-	/*'mod/live:addinstance' => array(
-			'riskbitmask' => RISK_XSS,
-	
-			'captype' => 'write',
-			'contextlevel' => CONTEXT_COURSE,
-			'archetypes' => array(
-					'editingteacher' => CAP_ALLOW,
-					'manager' => CAP_ALLOW
-			),
-			'clonepermissionsfrom' => 'moodle/course:manageactivities'
-	),*/
-
+    'mod/live:addinstance' => array(
+        'riskbitmask' => RISK_XSS,
+        'captype' => 'write',
+        'contextlevel' => CONTEXT_COURSE,
+        'archetypes' => array(
+            'editingteacher' => CAP_ALLOW,
+            'manager' => CAP_ALLOW,
+            'admin' => CAP_ALLOW
+        ),
+        'clonepermissionsfrom' => 'moodle/course:manageactivities'
+    ),
     'mod/live:write' => array(
         'captype' => 'read',
         'contextlevel' => CONTEXT_MODULE,
@@ -71,16 +68,16 @@ $capabilities = array(
             'editingteacher' => CAP_ALLOW,
             'admin' => CAP_ALLOW
         )
-    )/*,
+    )/* ,
 
-    'mod/live:submit' => array(
-        'riskbitmask' => RISK_SPAM,
-        'captype' => 'write',
-        'contextlevel' => CONTEXT_MODULE,
-        'legacy' => array(
-            'student' => CAP_ALLOW
-        )
-    ),
-    */
+          'mod/live:submit' => array(
+          'riskbitmask' => RISK_SPAM,
+          'captype' => 'write',
+          'contextlevel' => CONTEXT_MODULE,
+          'legacy' => array(
+          'student' => CAP_ALLOW
+          )
+          ),
+         */
 );
 

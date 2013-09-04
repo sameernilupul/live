@@ -58,15 +58,21 @@ class mod_live_mod_form extends moodleform_mod {
         // Adding the rest of live settings, spreeading all them into this fieldset
         // or adding more fieldsets ('header' elements) if needed for better logic
         $mform->addElement('static', 'type', 'Broadcasting', 'Do you want to brodcast your lecture?');
-        
+
         $radioarray = array();
-        $radioarray[] = & $mform->createElement('radio', 'yesno', '', get_string('yes'), 1, $attributes);
-        $radioarray[] = & $mform->createElement('radio', 'yesno', '', get_string('no'), 0, $attributes);
+        $radioarray[] = & $mform->createElement('radio', 'broadcast', '', get_string('yes'), 'yes', array('size' => '64'));
+        $radioarray[] = & $mform->createElement('radio', 'broadcast', '', get_string('no'), 'no', array('size' => '64'));
         $mform->addGroup($radioarray, 'radioar', '', array(' '), false);
-        
+        $mform->setDefault('broadcast', 'no');
+
         $mform->addElement('text', 'youtubeusername', get_string('enteryoutube', 'live'), array('size' => '64'));
-        //$mform->addElement('header', 'livefieldset', get_string('livefieldset', 'live'));
-        //$mform->addElement('static', 'label2', 'livesetting2', 'Your live fields go here. Replace me!');
+        if (!empty($CFG->formatstringstriptags)) {
+            $mform->setType('youtubeusername', PARAM_TEXT);
+        } else {
+            $mform->setType('youtubeusername', PARAM_CLEAN);
+        }
+
+
         //-------------------------------------------------------------------------------
         // add standard elements, common to all modules
         $this->standard_coursemodule_elements();
