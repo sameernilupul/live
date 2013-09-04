@@ -20,8 +20,6 @@
  * @copyright  2013 Sameera Nilupul
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
-
-
 require_once(dirname(dirname(dirname(__FILE__))) . '/config.php');
 require_once(dirname(__FILE__) . '/lib.php');
 
@@ -60,9 +58,12 @@ if ($live->intro) { // Conditions to show the intro can change to look for own s
 }
 
 if (has_capability('mod/live:write', $context)) {
-    echo 'Has capability';
-    echo $OUTPUT->box(get_string('linktomyapp', 'live'), 'generalbox mod_introbox', 'liveintro');
-}else{
+    if (!strcmp($live->broadcast, 'yes')) {
+        echo $OUTPUT->box(get_string('link_onair', 'live').get_string('broadcasturl_top', 'live').$live->youtubeusername.get_string('broadcasturl_bottom', 'live'), 'generalbox mod_introbox', 'liveintro');
+    } else {
+        echo $OUTPUT->box(get_string('link_hangout', 'live'), 'generalbox mod_introbox', 'liveintro');
+    }
+} else {
     echo 'Dont have capability to start a lecture you can only view the hangout go to following link';
     echo '<br> http://www.youtube.com/user/sameeranilupul/live';
 }

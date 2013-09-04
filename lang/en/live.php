@@ -40,5 +40,8 @@ $string['pluginadministration'] = 'live administration';
 $string['pluginname'] = 'live';
 $string['enterheader'] ='Name your discussion';
 $string['enteryoutube'] ='Your YouTube username';
-$string['linktomyapp'] ='<p><a href="https://plus.google.com/hangouts/_?gid=466640560640" style="text-decoration:none;"><img src="https://ssl.gstatic.com/s2/oz/images/stars/hangout/1/gplus-hangout-24x100-normal.png" alt="Start a Hangout" style="border:0;width:100px;height:24px;"/></a></p>';
+$string['link_hangout'] ='<h2>Start your class here..</h2><p><a href="https://plus.google.com/hangouts/_?gid=466640560640" target="_blank" style="text-decoration:none;"><img src="https://ssl.gstatic.com/s2/oz/images/stars/hangout/1/gplus-hangout-60x230-normal.png" alt="Start a Hangout" style="border:0;width:230px;height:60px;"/></a></p><p>Your class is not broadcasted.</p>';
+$string['link_onair'] ='<h2>Start your class here..</h2><p><a href="https://plus.google.com/hangouts/_?hso=0&gid=%3C466640560640%3E" target="_blank" style="text-decoration:none;"><img src="https://ssl.gstatic.com/s2/oz/images/stars/hangout/1/gplus-hangout-60x230-normal.png" alt="Start a Hangout" style="border:0;width:230px;height:60px;"/></a></p><p>Your class is broadcasted via your YouTube page</p>';
+$string['broadcasturl_top']='<p><a href="https://www.youtube.com/user/';
+$string['broadcasturl_bottom']='/live" target="_blank">Your lecture is broadcasted here</a></p>';
 
