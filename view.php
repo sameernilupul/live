@@ -64,8 +64,11 @@ if (has_capability('mod/live:write', $context)) {
         echo $OUTPUT->box(get_string('link_hangout', 'live'), 'generalbox mod_introbox', 'liveintro');
     }
 } else {
-    echo 'Dont have capability to start a lecture you can only view the hangout go to following link';
-    echo '<br> http://www.youtube.com/user/sameeranilupul/live';
+    if (!strcmp($live->broadcast, 'yes')) {
+        echo $OUTPUT->box(get_string('student_invited', 'live').get_string('broadcasturl_top', 'live').$live->youtubeusername.get_string('broadcasturl_bottom', 'live'), 'generalbox mod_introbox', 'liveintro');
+    } else {
+        echo $OUTPUT->box(get_string('student_not_invited', 'live'), 'generalbox mod_introbox', 'liveintro');
+    }
 }
 
 // Finish the page

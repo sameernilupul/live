@@ -11,6 +11,3 @@ https://plus.google.com/hangouts/_?hso=0&gid=%3CappID%3E
 https://plus.google.com/hangouts/_?hso=0&gid=%3C466640560640%3E
 
 
-
-id = 4 / Teacher
-id = 5 / Student
